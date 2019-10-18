@@ -3,26 +3,27 @@
 
 // sass-lint:disable no-color-literals, no-color-keywords, indentation
 
-@mixin euiSlightShadow($color: $euiShadowColor, $opacity: .3) {
-  box-shadow: 0 2px 2px -1px rgba($color, $opacity);
+@mixin euiSlightShadow($color: $euiShadowColor, $opacity: .2) {
+  box-shadow: 0 1px 1px 0 rgba($color, $opacity);
 }
 
-@mixin euiBottomShadowSmall($color: $euiShadowColor, $opacity: .3) {
+@mixin euiBottomShadowSmall($color: $euiShadowColor, $opacity: .15) {
   box-shadow:
-    0 2px 2px -1px rgba($color, $opacity),
-    0 1px 5px -2px rgba($color, $opacity);
-}
-
-@mixin euiBottomShadowMedium($color: $euiShadowColor, $opacity: .2) {
-  box-shadow:
-    0 6px 12px -1px rgba($color, $opacity),
-    0 4px 4px -1px rgba($color, $opacity),
+    0 1px 1px 0 rgba($color, $opacity),
     0 2px 2px 0 rgba($color, $opacity);
+}
+
+@mixin euiBottomShadowMedium($color: $euiShadowColor, $opacity: .13) {
+  box-shadow:
+    0 1px 1px 0 rgba($color, $opacity),
+    0 2px 2px 0 rgba($color, $opacity),
+    0 4px 4px 0 rgba($color, $opacity),
+    0 8px 8px 0 rgba($color, $opacity);
 }
 
 // Similar to shadow medium but wihtout the bottom depth. Useful for popovers
 // that drop UP rather than DOWN.
-@mixin euiBottomShadowFlat($color: $euiShadowColor, $opacity: .2) {
+@mixin euiBottomShadowFlat($color: $euiShadowColor, $opacity: .1) {
   box-shadow:
     0 0 12px -1px rgba($color, $opacity),
     0 0 4px -1px rgba($color, $opacity),

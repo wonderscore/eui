@@ -6,7 +6,6 @@
 @mixin euiFont {
   font-family: $euiFontFamily;
   font-weight: $euiFontWeightRegular;
-  letter-spacing: -.005em;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   font-kerning: normal;
@@ -14,7 +13,6 @@
 
 @mixin euiCodeFont {
   font-family: $euiCodeFontFamily;
-  letter-spacing: normal;
 }
 
 @mixin euiText {
@@ -37,19 +35,18 @@
     @include euiFontSize;
     @include lineHeightFromBaseline(3);
     font-weight: $euiFontWeightSemiBold;
-    letter-spacing: -.02em;
   } @else if $size == 's' {
     @include euiFontSizeL;
     @include lineHeightFromBaseline(4);
     font-weight: $euiFontWeightMedium;
-    letter-spacing: -.025em;
   } @else if $size == 'm' {
     @include euiFontSizeXL;
     @include lineHeightFromBaseline(5);
-    letter-spacing: -.04em;
+    font-weight: $euiFontWeightBold;
   } @else if $size == 'l' {
     @include euiFontSizeXXL;
     @include lineHeightFromBaseline(6);
+    font-weight: $euiFontWeightBold;
   } @else {
     @include fontSize($size);
     @include lineHeightFromBaseline(3);
@@ -87,14 +84,12 @@
   @include fontSize($euiFontSizeXL);
   line-height: 1.25;
   font-weight: $euiFontWeightLight; // always apply light weight to x-large type
-  letter-spacing: -.05em;
 }
 
 @mixin euiFontSizeXXL {
   @include fontSize($euiFontSizeXXL);
   line-height: 1.25;
   font-weight: $euiFontWeightLight; // always apply light weight to xx-large type
-  letter-spacing: -.03em;
 }
 
 @mixin euiTextBreakWord {
@@ -144,4 +139,3 @@
     visibility: hidden;
   }
 }
-

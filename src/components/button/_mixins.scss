@@ -8,24 +8,14 @@
   height: $euiButtonHeight;
   line-height: $euiButtonHeight; // prevents descenders from getting cut off
   text-decoration: none;
-  border: solid 1px transparent;
   text-align: center;
   transition: all $euiAnimSpeedNormal $euiAnimSlightBounce;
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
 
-  &:hover:not(:disabled) {
-    transform: translateY(-1px);
-  }
-
-  &:hover:not(:disabled),
   &:focus {
     text-decoration: underline;
-  }
-
-  &:focus {
-    animation: euiButtonActive $euiAnimSpeedNormal $euiAnimSlightBounce;
   }
 
   &:active:not(:disabled) {
@@ -62,12 +52,6 @@
     > * + * {
       margin-left: $euiSizeS; /* 1 */
     }
-  }
-}
-
-@keyframes euiButtonActive {
-  50% {
-    transform: translateY(1px);
   }
 }
 

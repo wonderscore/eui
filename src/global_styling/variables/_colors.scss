@@ -1,7 +1,7 @@
 // Core
-$euiColorPrimary: #006BB4 !default;
-$euiColorSecondary: #017D73 !default;
-$euiColorAccent: #DD0A73 !default;
+$euiColorPrimary: #006DE4 !default;
+$euiColorSecondary: #00B1A6 !default;
+$euiColorAccent: #F71D9C !default;
 $euiColorHighlight: #FFFBF1 !default; // Not used should we deprecate?
 
 // These colors stay the same no matter the theme
@@ -10,8 +10,8 @@ $euiColorInk: #000 !default;
 
 // Status
 $euiColorSuccess: $euiColorSecondary !default;
-$euiColorDanger: #BD271E !default;
-$euiColorWarning: #F5A700 !default;
+$euiColorDanger: #D7190F !default;
+$euiColorWarning: #FFC82D !default;
 
 // Grays
 $euiColorEmptyShade: #FFF !default;
@@ -19,13 +19,13 @@ $euiColorLightestShade: #F5F7FA !default;
 $euiColorLightShade: #D3DAE6 !default;
 $euiColorMediumShade: #98A2B3 !default;
 $euiColorDarkShade: #69707D !default;
-$euiColorDarkestShade: #343741 !default;
+$euiColorDarkestShade: #54565F !default;
 $euiColorFullShade: #000 !default;
 
 // Every color below must be based mathmatically on the set above.
 
 $euiTextColor: $euiColorDarkestShade !default;
-$euiTitleColor: shadeOrTint($euiTextColor, 50%, 0%) !default;
+$euiTitleColor: $euiColorFullShade !default;
 $euiLinkColor: $euiColorPrimary !default;
 $euiFocusBackgroundColor: tintOrShade($euiColorPrimary, 90%, 50%) !default;
 $euiPageBackgroundColor: tintOrShade($euiColorLightestShade, 50%, 30%) !default;

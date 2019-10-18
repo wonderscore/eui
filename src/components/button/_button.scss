@@ -6,7 +6,6 @@
 // Our base button
 .euiButton {
   @include euiButton;
-  @include euiSlightShadow;
 
   border-radius: $euiBorderRadius;
   min-width: $euiButtonMinWidth;
@@ -14,7 +13,7 @@
   .euiButton__content {
     @include euiButtonContent;
 
-    padding: 0 ($euiSize - $euiSizeXS);
+    padding: 0 $euiSizeM;
   }
 
   .euiButton__text {
@@ -23,6 +22,7 @@
   }
 
   &.euiButton--small {
+    border-radius: ($euiBorderRadius * .75);
     height: $euiButtonHeightSmall;
     line-height: $euiButtonHeightSmall; // prevents descenders from getting cut off
   }
@@ -33,10 +33,10 @@
     }
   }
 
-  &:hover,
-  &:active {
-    @include euiSlightShadowHover;
-  }
+  // &:hover,
+  // &:active {
+  //   @include euiSlightShadowHover;
+  // }
 
   &:enabled {
     &:hover,
@@ -68,8 +68,6 @@
 
     &:hover,
     &:focus {
-      @include euiSlightShadow;
-
       text-decoration: none;
     }
   }
@@ -100,7 +98,7 @@ $buttonTypes: (
       color: makeHighContrastColor($color, $euiColorEmptyShade);
     }
 
-    border-color: $color;
+    background-color: transparentize($color, .85);
 
     &.euiButton--fill {
       background-color: $color;
@@ -125,20 +123,9 @@ $buttonTypes: (
     }
 
     &:enabled {
-      $shadowColor: $euiShadowColor;
-      @if ($name == 'ghost') {
-        $shadowColor: $euiColorInk;
-      } @else if (lightness($euiTextColor) < 50) {
-        // Only if this is the light theme do we use the button variant color to colorize the shadow
-        $shadowColor: desaturate($color, 60%);
-      }
-
-      @include euiSlightShadow($shadowColor);
-
       &:hover,
       &:focus {
-        @include euiSlightShadowHover($shadowColor);
-        background-color: transparentize($color, .9);
+        background-color: transparentize($color, .7);
 
         @if ($name == 'disabled') {
           cursor: not-allowed;

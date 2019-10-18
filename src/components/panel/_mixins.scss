@@ -9,9 +9,8 @@
   } @else {
     .#{$selector} {
 
-      @include euiBottomShadowSmall;
+      @include euiBottomShadowMedium;
       background-color: $euiColorEmptyShade;
-      border: $euiBorderThin;
       border-radius: $euiBorderRadius;
       flex-grow: 1;
 
