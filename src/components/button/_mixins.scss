@@ -8,16 +8,11 @@
   height: $euiButtonHeight;
   line-height: $euiButtonHeight; // prevents descenders from getting cut off
   text-decoration: none;
-  border: solid 1px transparent;
   text-align: center;
   transition: all $euiAnimSpeedNormal $euiAnimSlightBounce;
   white-space: nowrap;
   max-width: 100%;
   vertical-align: middle;
-
-  &:hover:not(:disabled) {
-    transform: translateY(-1px);
-  }
 
   &:hover:not(:disabled),
   &:focus {
