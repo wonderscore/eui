@@ -13,7 +13,7 @@
   .euiButton__content {
     @include euiButtonContent;
 
-    padding: 0 $euiSize;
+    padding: 0 $euiSizeM;
   }
 
   .euiButton__text {
@@ -98,7 +98,7 @@ $buttonTypes: (
       color: makeHighContrastColor($color, $euiColorEmptyShade);
     }
 
-    background-color: transparentize($color, .8);
+    background-color: transparentize($color, .85);
 
     &.euiButton--fill {
       background-color: $color;

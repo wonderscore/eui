@@ -14,13 +14,8 @@
   max-width: 100%;
   vertical-align: middle;
 
-  &:hover:not(:disabled),
   &:focus {
     text-decoration: underline;
-  }
-
-  &:focus {
-    animation: euiButtonActive $euiAnimSpeedNormal $euiAnimSlightBounce;
   }
 
   &:active:not(:disabled) {
@@ -57,12 +52,6 @@
     > * + * {
       margin-left: $euiSizeS; /* 1 */
     }
-  }
-}
-
-@keyframes euiButtonActive {
-  50% {
-    transform: translateY(1px);
   }
 }
 
