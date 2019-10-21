@@ -64,10 +64,10 @@ const euiFontSizes = [
 ];
 
 const euiShadows = [
+  'euiBottomShadowFlat',
   'euiSlightShadow',
   'euiBottomShadowSmall',
   'euiBottomShadowMedium',
-  'euiBottomShadowFlat',
   'euiBottomShadow',
   'euiBottomShadowLarge',
 ];

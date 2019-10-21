@@ -43,7 +43,8 @@
   opacity: 0; /* 2 */
   visibility: hidden; /* 2 */
   transform: translateY(0) translateX(0) translateZ(0); /* 2 */
-  @include euiBottomShadow($adjustBorders: true);
+  box-shadow: none;
+  @include euiPopoverShadow;
 
   &.euiPopover__panel-isOpen {
     opacity: 1;
@@ -56,15 +57,6 @@
     width: 0;
     height: 0;
 
-    // This fakes a border on the arrow.
-    &:before {
-      position: absolute;
-      content: '';
-      height: 0;
-      width: 0;
-    }
-
-    // This part of the arrow matches the panel.
     &:after {
       position: absolute;
       content: '';
@@ -73,13 +65,6 @@
     }
 
     &.euiPopover__panelArrow--top {
-      &:before {
-        bottom: -$euiPopoverArrowSize + 1;
-        border-left: $euiPopoverArrowSize solid transparent;
-        border-right: $euiPopoverArrowSize solid transparent;
-        border-top: $euiPopoverArrowSize solid $euiBorderColor;
-      }
-
       &:after {
         bottom: -$euiPopoverArrowSize + 2;
         border-left: $euiPopoverArrowSize solid transparent;
@@ -89,14 +74,6 @@
     }
 
     &.euiPopover__panelArrow--right {
-      &:before {
-        left: -$euiPopoverArrowSize;
-        top: 50%;
-        border-top: $euiPopoverArrowSize solid transparent;
-        border-bottom: $euiPopoverArrowSize solid transparent;
-        border-right: $euiPopoverArrowSize solid $euiBorderColor;
-      }
-
       &:after {
         left: -$euiPopoverArrowSize + 1;
         top: 50%;
@@ -107,13 +84,6 @@
     }
 
     &.euiPopover__panelArrow--bottom {
-      &:before {
-        top: -$euiPopoverArrowSize;
-        border-left: $euiPopoverArrowSize solid transparent;
-        border-right: $euiPopoverArrowSize solid transparent;
-        border-bottom: $euiPopoverArrowSize solid $euiBorderColor;
-      }
-
       &:after {
         top: -$euiPopoverArrowSize + 1;
         border-left: $euiPopoverArrowSize solid transparent;
@@ -123,14 +93,6 @@
     }
 
     &.euiPopover__panelArrow--left {
-      &:before {
-        right: -$euiPopoverArrowSize + 1;
-        top: 50%;
-        border-top: $euiPopoverArrowSize solid transparent;
-        border-bottom: $euiPopoverArrowSize solid transparent;
-        border-left: $euiPopoverArrowSize solid $euiBorderColor;
-      }
-
       &:after {
         right: -$euiPopoverArrowSize + 2;
         top: 50%;
