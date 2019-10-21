@@ -10,14 +10,15 @@
   justify-content: center;
   padding-bottom: 10vh;
   animation: euiAnimFadeIn $euiAnimSpeedFast ease-in;
+  backdrop-filter: blur(2px);
 
-  $backgroundColor: $euiColorEmptyShade;
+  $backgroundColor: $euiColorDarkestShade;
 
   @if (lightness($euiTextColor) > 50) {
     $backgroundColor: $euiColorLightShade;
   }
 
-  background: transparentize($backgroundColor, .2);
+  background: transparentize($backgroundColor, .75);
 }
 
 .euiBody-hasOverlayMask {
