@@ -31,8 +31,7 @@
   &:not(:disabled) {
     &:hover,
     &:focus {
-      @include euiSlightShadow;
-      border-color: $euiBorderColor;
+      @include euiBottomShadowSmall;
 
       .euiKeyPadMenuItem__icon { // sass-lint:disable-line nesting-depth
         transform: translateY(0);

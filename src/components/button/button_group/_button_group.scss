@@ -53,11 +53,6 @@
     &:not([class*='fill']) {
       border-color: $euiButtonToggleBorderColor;
     }
-
-    // don't colorize the shadows
-    &:enabled {
-      @include euiSlightShadow;
-    }
   }
 
   &:first-child {

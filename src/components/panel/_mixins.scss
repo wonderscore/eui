@@ -9,7 +9,7 @@
   } @else {
     .#{$selector} {
 
-      @include euiBottomShadowMedium;
+      @include euiBottomShadowSmall;
       background-color: $euiColorEmptyShade;
       border-radius: $euiBorderRadius;
       flex-grow: 1;
@@ -29,14 +29,13 @@
 
         &:hover,
         &:focus {
-          @include euiSlightShadowHover;
-          transform: translateY(-2px);
+          @include euiBottomShadowSmallHover;
           cursor: pointer;
         }
       }
 
       &.#{$selector}--shadow {
-        @include euiBottomShadowMedium;
+        @include euiBottomShadowLarge;
 
         @if (lightness($euiTextColor) < 50) {
           border-bottom-color: transparentize($euiShadowColor, .5);

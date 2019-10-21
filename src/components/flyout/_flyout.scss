@@ -1,10 +1,9 @@
 @import '../form/variables';
 
 .euiFlyout {
-  border-left: $euiBorderThin;
   // The mixin augments the above
   // sass-lint:disable mixins-before-declarations
-  @include euiBottomShadowLarge($adjustBorders: true);
+  @include euiBottomShadowLarge;
   position: fixed;
   top: 0;
   bottom: 0;
