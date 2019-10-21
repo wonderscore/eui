@@ -12,15 +12,6 @@
   &::placeholder { @content; }
 }
 
-@function euiFormControlGradient($color: $euiColorPrimary) {
-  @return linear-gradient(to top,
-    $color,
-    $color 2px,
-    transparent 2px,
-    transparent 100%
-  );
-}
-
 /**
  * 3. Must supply both values to background-size or some browsers apply the single value to both directions
  */
@@ -29,11 +20,11 @@
   @include euiFont;
   font-size: $euiFontSizeS;
   line-height: 1em; // fixes text alignment in IE
-  color: $euiTextColor;
+  color: $euiTitleColor;
 
   // sass-lint:disable-block mixins-before-declarations
   @include euiPlaceholderPerBrowser {
-    color: $euiColorDarkShade;
+    color: $euiColorMediumShade;
   }
 }
 
@@ -85,19 +76,11 @@
   }
 }
 
-@mixin euiFormControlDefaultShadow($borderOnly: false) {
+@mixin euiFormControlDefaultShadow {
   // sass-lint:disable-block indentation
   background-color: $euiFormBackgroundColor;
   background-repeat: no-repeat;
   background-size: 0% 100%; /* 3 */
-
-  @if ($borderOnly) {
-    box-shadow: inset 0 0 0 1px $euiFormBorderColor;
-  } @else {
-    box-shadow:
-      #{$euiFormControlBoxShadow},
-      inset 0 0 0 1px $euiFormBorderColor;
-  }
 
   transition:
     box-shadow $euiAnimSpeedFast ease-in,
@@ -113,32 +96,23 @@
   }
 }
 
-@mixin euiFormControlFocusStyle($borderOnly: false) {
+@mixin euiFormControlFocusStyle {
   // sass-lint:disable-block indentation, empty-args
-  background-color: tintOrShade($euiColorEmptyShade, 0%, 40%);
-  background-image: euiFormControlGradient();
-  background-size: 100% 100%; /* 3 */
-
-  @if ($borderOnly) {
-    box-shadow: inset 0 0 0 1px $euiFormBorderColor;
-  } @else {
-    box-shadow:
-      0 1px 1px -1px transparentize($euiShadowColor, .8),
-      0 4px 4px -2px transparentize($euiShadowColor, .8),
-      inset 0 0 0 1px $euiFormBorderColor;
-  }
+  background-color: tintOrShade($euiFormBackgroundColor, 60%, 40%);
+  box-shadow:
+    0 0 0 1px transparentize($euiFormBorderColor, .7),
+    inset 0 0 0 1px transparentize($euiFormBorderColor, .7);
 }
 
 @mixin euiFormControlInvalidStyle {
-  background-image: euiFormControlGradient($euiColorDanger);
-  background-size: 100%;
+  background-color: $euiFormBackgroundInvalidColor;
+  box-shadow: 0 0 0 1px transparentize($euiColorDanger, .7), inset 0 0 0 1px transparentize($euiColorDanger, .7);
 }
 
 @mixin euiFormControlDisabledStyle {
   cursor: not-allowed;
   color: $euiFormControlDisabledColor;
   background: $euiFormBackgroundDisabledColor;
-  box-shadow: inset 0 0 0 1px $euiFormBorderDisabledColor;
 
   // sass-lint:disable-block mixins-before-declarations
   @include euiPlaceholderPerBrowser {
@@ -164,7 +138,7 @@
   @include euiFormControlText;
 
   border: none;
-  border-radius: 0;
+  border-radius: $euiBorderRadius;
   padding: $euiFormControlPadding;
 
   @if ($includeStates) {
@@ -199,7 +173,7 @@
 }
 
 @mixin euiFormControlStyleCompressed($borderOnly: false, $includeStates: true) {
-  @include euiFormControlDefaultShadow($borderOnly: true);
+  @include euiFormControlDefaultShadow;
   padding: $euiFormControlCompressedPadding;
   border-radius: $euiFormControlCompressedBorderRadius;
 
@@ -209,7 +183,7 @@
     }
 
     &:focus { /* 4 */
-      @include euiFormControlFocusStyle($borderOnly: true);
+      @include euiFormControlFocusStyle;
     }
 
     &:disabled {

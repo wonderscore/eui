@@ -75,7 +75,7 @@
       @include euiFormControlFocusStyle;
 
       &--compressed {
-        @include euiFormControlFocusStyle($borderOnly: true);
+        @include euiFormControlFocusStyle;
       }
     }
   }
