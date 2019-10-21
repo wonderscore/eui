@@ -1,18 +1,12 @@
 .euiToast {
-  border: $euiBorderThin;
   // This overwrites some of the border above
   // sass-lint:disable-block mixins-before-declarations
-  @include euiBottomShadowLarge;
+  @include euiBottomShadow;
 
   position: relative;
   padding: $euiSize;
   background-color: $euiColorEmptyShade;
   width: 100%;
-
-  &:hover .euiToast__closeButton,
-  &:focus .euiToast__closeButton {
-    opacity: 1;
-  }
 }
 
 /**
@@ -24,7 +18,6 @@
   right: $euiSize;
   line-height: 0; /* 1 */
   appearance: none;
-  opacity: 0;
   transition: opacity $euiAnimSpeedFast $euiAnimSlightResistance;
 
   svg {
@@ -88,7 +81,7 @@ $toastTypes: (
 
 .euiToastHeader__title {
   @include euiTitle('xs');
-  font-weight: $euiFontWeightLight;
+  font-weight: $euiFontWeightMedium;
 }
 
 .euiToastHeader--withBody {
