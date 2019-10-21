@@ -22,6 +22,10 @@
 
 @include euiPanel('euiDroppable--withPanel');
 
+.euiDroppable--withPanel {
+  border-radius: $euiBorderRadius * 2;
+}
+
 .euiDroppable--noGrow {
   flex-grow: 0;
 }

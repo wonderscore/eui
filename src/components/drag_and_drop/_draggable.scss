@@ -33,6 +33,11 @@
       // @include euiBottomShadow;
       // @include euiFocusRing;
     }
+
+    &:not(.euiButton) {
+      border: $euiBorderThin;
+      box-shadow: none;
+    }
   }
 }
 
