@@ -46,6 +46,7 @@
   }
 
   &:disabled {
+    background-color: transparentize($euiButtonColorDisabled, .75);
     color: $euiButtonColorDisabled;
     border-color: $euiButtonColorDisabled;
     pointer-events: none;
