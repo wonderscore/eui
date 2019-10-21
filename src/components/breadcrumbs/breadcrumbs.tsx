@@ -104,7 +104,7 @@ const limitBreadcrumbs = (
             onClickAriaLabel={ariaLabel}
             title="View hidden breadcrumbs"
             className="euiBreadcrumb euiBreadcrumb__collapsedBadge">
-            &hellip;
+            &#8943;
           </EuiBadge>
         )}
       </EuiI18n>
@@ -112,28 +112,22 @@ const limitBreadcrumbs = (
 
     if (showMaxPopover) {
       return (
-        <Fragment>
-          <EuiPopover
-            button={ellipsisButton}
-            isOpen={isPopoverOpen}
-            closePopover={() => setIsPopoverOpen(false)}>
-            <EuiBreadcrumbs
-              className="euiBreadcrumbs__inPopover"
-              breadcrumbs={overflowBreadcrumbs}
-              responsive={false}
-              truncate={false}
-              max={0}
-            />
-          </EuiPopover>
-          <EuiBreadcrumbSeparator />
-        </Fragment>
+        <EuiPopover
+          button={ellipsisButton}
+          isOpen={isPopoverOpen}
+          closePopover={() => setIsPopoverOpen(false)}>
+          <EuiBreadcrumbs
+            className="euiBreadcrumbs__inPopover"
+            breadcrumbs={overflowBreadcrumbs}
+            responsive={false}
+            truncate={false}
+            max={0}
+          />
+        </EuiPopover>
       );
     } else {
       return (
-        <Fragment>
-          <div className="euiBreadcrumb euiBreadcrumb--collapsed">&hellip;</div>
-          <EuiBreadcrumbSeparator />
-        </Fragment>
+        <div className="euiBreadcrumb euiBreadcrumb--collapsed">&#8943;</div>
       );
     }
   };
@@ -144,8 +138,6 @@ const limitBreadcrumbs = (
 
   return [...breadcrumbsAtStart, ...breadcrumbsAtEnd];
 };
-
-const EuiBreadcrumbSeparator = () => <div className="euiBreadcrumbSeparator" />;
 
 export const EuiBreadcrumbs: FunctionComponent<EuiBreadcrumbsProps> = ({
   breadcrumbs,
@@ -166,9 +158,11 @@ export const EuiBreadcrumbs: FunctionComponent<EuiBreadcrumbsProps> = ({
       ...breadcrumbRest
     } = breadcrumb;
 
+    const isFirstBreadcrumb = index === 0;
     const isLastBreadcrumb = index === breadcrumbs.length - 1;
 
     const breadcrumbClasses = classNames('euiBreadcrumb', breadcrumbClassName, {
+      'euiBreadcrumb--first': isFirstBreadcrumb,
       'euiBreadcrumb--last': isLastBreadcrumb,
       'euiBreadcrumb--truncate': truncate,
     });
@@ -196,7 +190,7 @@ export const EuiBreadcrumbs: FunctionComponent<EuiBreadcrumbsProps> = ({
           {(ref, innerText) => (
             <EuiLink
               ref={ref}
-              color={isLastBreadcrumb ? 'text' : 'subdued'}
+              color={isLastBreadcrumb ? 'text' : 'primary'}
               onClick={onClick}
               href={href}
               className={breadcrumbClasses}
@@ -209,18 +203,7 @@ export const EuiBreadcrumbs: FunctionComponent<EuiBreadcrumbsProps> = ({
       );
     }
 
-    let separator;
-
-    if (!isLastBreadcrumb) {
-      separator = <EuiBreadcrumbSeparator />;
-    }
-
-    return (
-      <Fragment key={index}>
-        {link}
-        {separator}
-      </Fragment>
-    );
+    return <Fragment key={index}>{link}</Fragment>;
   });
 
   const limitedBreadcrumbs = max
