@@ -26,11 +26,11 @@
   @if $size == 'xxxs' {
     @include euiFontSizeXS;
     @include lineHeightFromBaseline(3);
-    font-weight: $euiFontWeightBold;
+    font-weight: $euiFontWeightSemiBold;
   } @else if $size == 'xxs' {
     @include euiFontSizeS;
     @include lineHeightFromBaseline(3);
-    font-weight: $euiFontWeightBold;
+    font-weight: $euiFontWeightSemiBold;
   } @else if $size == 'xs' {
     @include euiFontSize;
     @include lineHeightFromBaseline(3);
@@ -38,7 +38,7 @@
   } @else if $size == 's' {
     @include euiFontSizeL;
     @include lineHeightFromBaseline(4);
-    font-weight: $euiFontWeightMedium;
+    font-weight: $euiFontWeightBold;
   } @else if $size == 'm' {
     @include euiFontSizeXL;
     @include lineHeightFromBaseline(5);

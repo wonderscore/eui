@@ -6,6 +6,7 @@
 // Our base button
 .euiButton {
   @include euiButton;
+  @include euiFontSize;
 
   border-radius: $euiBorderRadius;
   min-width: $euiButtonMinWidth;
@@ -22,6 +23,7 @@
   }
 
   &.euiButton--small {
+    @include euiFontSizeS;
     border-radius: ($euiBorderRadius * .75);
     height: $euiButtonHeightSmall;
     line-height: $euiButtonHeightSmall; // prevents descenders from getting cut off

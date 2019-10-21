@@ -48,6 +48,7 @@
 
 @mixin euiBottomShadowSmallHover($color: $euiShadowColor, $opacity: .15) {
   box-shadow:
+    0 0 0 5px rgba($euiShadowColorHover, $opacity),
     0 2px 4px 0 rgba($color, $opacity),
     0 4px 8px 0 rgba($color, $opacity),
     0 8px 16px 0 rgba($color, $opacity),
