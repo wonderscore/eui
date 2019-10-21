@@ -16,7 +16,7 @@
 
   // Target when the euiFormControlLayout is compressed without specifying the full class name in case it ever changes
   &[class*='--compressed'] {
-    @include euiFormControlDefaultShadow($borderOnly: true);
+    @include euiFormControlDefaultShadow;
     border-radius: $euiBorderRadius / 2;
 
     .euiFormControlLayoutDelimited__input {

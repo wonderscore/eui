@@ -7,35 +7,26 @@ exports[`EuiHeaderBreadcrumbs is rendered 1`] = `
   data-test-subj="test subject string"
 >
   <a
-    class="euiLink euiLink--subdued euiBreadcrumb customClass"
+    class="euiLink euiLink--primary euiBreadcrumb customClass euiBreadcrumb--first"
     data-test-subj="breadcrumbsAnimals"
     href="#"
     rel="noreferrer"
   >
     Animals
   </a>
-  <div
-    class="euiBreadcrumbSeparator"
-  />
   <button
-    class="euiLink euiLink--subdued euiBreadcrumb"
+    class="euiLink euiLink--primary euiBreadcrumb"
     type="button"
   >
     Reptiles
   </button>
-  <div
-    class="euiBreadcrumbSeparator"
-  />
   <a
-    class="euiLink euiLink--subdued euiBreadcrumb"
+    class="euiLink euiLink--primary euiBreadcrumb"
     href="#"
     rel="noreferrer"
   >
     Boa constrictor
   </a>
-  <div
-    class="euiBreadcrumbSeparator"
-  />
   <span
     aria-current="page"
     class="euiBreadcrumb euiBreadcrumb--last"

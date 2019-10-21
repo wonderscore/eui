@@ -16,7 +16,6 @@
 
 .euiFormControlLayout--group {
   // Match just the regular drop shadow of inputs
-  @include euiFormControlDefaultShadow;
   display: flex;
   align-items: stretch;
   padding: 1px; /* 1 */
@@ -38,9 +37,9 @@
   .euiFormControlLayout__prepend,
   .euiFormControlLayout__append {
     @include euiTextTruncate;
+    border: $euiBorderThin;
     flex-shrink: 0;
     height: 100%;
-    border-radius: 0;
 
     // ICONS
 
@@ -66,6 +65,14 @@
         width: $euiSize;
       }
     }
+  }
+
+  .euiFormControlLayout__prepend {
+    border-radius: $euiBorderRadius 0 0 $euiBorderRadius;
+  }
+
+  .euiFormControlLayout__append {
+    border-radius: 0 $euiBorderRadius $euiBorderRadius 0;
   }
 
   .euiButtonIcon {
@@ -137,7 +144,7 @@
   // Compressed alterations
 
   &.euiFormControlLayout--compressed {
-    @include euiFormControlDefaultShadow($borderOnly: true);
+    @include euiFormControlDefaultShadow;
     border-radius: $euiBorderRadius / 2;
     overflow: hidden; // Keeps backgrounds inside border radius
 

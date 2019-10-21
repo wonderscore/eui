@@ -4,29 +4,33 @@
 
 .euiBreadcrumb {
   display: inline-block;
+  padding: $euiSizeXS $euiSize;
+  position: relative;
+  clip-path: polygon(0 0, calc(100% - #{$euiSizeS}) 0, 100% 50%, calc(100% - #{$euiSizeS}) 100%, 0 100%, $euiSizeS 50%);
 
   &:not(.euiBreadcrumb--last) {
-    margin-right: $euiBreadcrumbSpacing;
+    background: transparentize($euiColorPrimary, .85);
+    margin-right: -$euiSizeXS;
   }
 }
 
+.euiBreadcrumb--first {
+  padding-left: $euiSizeM;
+  border-radius: $euiBorderRadius 0 0 $euiBorderRadius;
+  clip-path: polygon(0 0, calc(100% - #{$euiSizeS}) 0, 100% 50%, calc(100% - #{$euiSizeS}) 100%, 0 100%);
+}
+
 .euiBreadcrumb--last {
+  background: transparentize($euiButtonColorDisabled, .75);
+  border-radius: 0 $euiBorderRadius $euiBorderRadius 0;
+  color: $euiColorFullShade;
   font-weight: $euiFontWeightMedium;
+  padding-right: $euiSizeM;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, $euiSizeS 50%);
 }
 
 .euiBreadcrumb--collapsed {
-  color: $euiColorLightShade;
-}
-
-.euiBreadcrumbSeparator {
-  flex-shrink: 0;
-  pointer-events: none;
-  display: inline-block;
-  margin-right: $euiBreadcrumbSpacing;
-  width: 1px;
-  height: $euiSize;
-  transform: translateY(.2em) rotate(15deg);
-  background: $euiColorLightShade;
+  color: $euiColorPrimary;
 }
 
 .euiBreadcrumbs__inPopover {
@@ -37,9 +41,8 @@
 }
 
 .euiBreadcrumb__collapsedBadge {
-  height: $euiSize;
-  margin-top: -$euiSizeM / 2;
   background-color: transparentize($euiColorDarkestShade, .85);
+  border-radius: 0;
 
   .euiBadge__content {
     margin-top: -$euiSizeXS / 2;
@@ -55,7 +58,6 @@
 .euiBreadcrumbs--responsive {
   // Laptop
   @include euiBreakpoint('l') {
-    .euiBreadcrumbSeparator,
     .euiBreadcrumb {
       display: none;
 
@@ -68,7 +70,6 @@
 
   // Tablets
   @include euiBreakpoint('m') {
-    .euiBreadcrumbSeparator,
     .euiBreadcrumb {
       display: none;
 
@@ -81,7 +82,6 @@
 
   // Mobile
   @include euiBreakpoint('xs', 's') {
-    .euiBreadcrumbSeparator,
     .euiBreadcrumb {
       display: none;
 
@@ -107,11 +107,6 @@
     &.euiBreadcrumb--last {
       max-width: none;
     }
-  }
-
-  .euiBreadcrumbSeparator {
-    // Align with flex versus inline-block misaligns the separator slightly
-    transform: translateY(0) rotate(15deg);
   }
 
   .euiBreadcrumbBadge {
