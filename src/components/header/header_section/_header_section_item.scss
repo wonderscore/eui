@@ -9,8 +9,8 @@
 
   &:after {
     position: absolute;
-    content: '';
-    top: $euiSize;
+    // content: '';
+    top: 0;
     bottom: 0;
     background: $euiBorderColor;
     left: 0;
